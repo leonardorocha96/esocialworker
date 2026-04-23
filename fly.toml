@@ -1,23 +1,28 @@
-app = "esocialworker-ltwnjq"
-primary_region = "gru"
+# fly.toml app configuration file generated for esocialworker-ltwnjq on 2026-04-23T19:57:47Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'esocialworker-ltwnjq'
+primary_region = 'gru'
 
 [build]
 
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = "off"
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
 
-[[http_service.checks]]
-  grace_period = "30s"
-  interval = "30s"
-  method = "GET"
-  timeout = "10s"
-  path = "/health"
+  [[http_service.checks]]
+    interval = '30s'
+    timeout = '10s'
+    grace_period = '30s'
+    method = 'GET'
+    path = '/health'
 
 [[vm]]
-  cpu_kind = "shared"
+  cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
