@@ -1,4 +1,4 @@
-app = "esocial-worker-CHANGE-ME"
+app = "esocial-worker"
 primary_region = "gru"
 
 [build]
