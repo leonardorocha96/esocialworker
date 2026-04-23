@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: esocial-worker
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      # - key: WORKER_TOKEN
+      #   generateValue: true
